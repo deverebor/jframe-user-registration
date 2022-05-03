@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="UserRegistration">
-  <grid id="27dc6" binding="mainContent" layout-manager="GridLayoutManager" row-count="9" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="10" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
@@ -8,16 +8,20 @@
     <properties/>
     <border type="none"/>
     <children>
-      <component id="b1a22" class="javax.swing.JLabel" binding="lbName">
+      <component id="3ad19" class="javax.swing.JLabel" binding="jlUserName">
         <constraints>
           <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <labelFor value="e0666"/>
-          <text value="Nome:"/>
+          <text value="User Name:"/>
         </properties>
       </component>
-      <component id="e0666" class="javax.swing.JTextField" binding="tfName">
+      <vspacer id="c28fe">
+        <constraints>
+          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+        </constraints>
+      </vspacer>
+      <component id="42aa0" class="javax.swing.JTextField" binding="jtUserName">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -25,25 +29,29 @@
         </constraints>
         <properties/>
       </component>
-      <component id="58b27" class="javax.swing.JLabel" binding="lbTypeOfStreet">
+      <component id="939f1" class="javax.swing.JLabel" binding="jlStreetType">
         <constraints>
           <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <labelFor value="4dbf3"/>
           <text value="Tipo de Logadouro:"/>
         </properties>
       </component>
-      <component id="dade9" class="javax.swing.JLabel" binding="lbStreet">
+      <component id="b65eb" class="javax.swing.JComboBox" binding="jcbStreetType">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+      </component>
+      <component id="68cfb" class="javax.swing.JLabel" binding="jlStreet">
         <constraints>
           <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <labelFor value="e22ac"/>
-          <text value="Logadouro:"/>
+          <text value="Logadouro"/>
         </properties>
       </component>
-      <component id="e22ac" class="javax.swing.JTextField" binding="tfStreet">
+      <component id="32321" class="javax.swing.JTextField" binding="jtfStreet">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -51,16 +59,15 @@
         </constraints>
         <properties/>
       </component>
-      <component id="b5414" class="javax.swing.JLabel" binding="lbStreetNumber">
+      <component id="5b7b5" class="javax.swing.JLabel" binding="jlStreetNumber">
         <constraints>
           <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <labelFor value="cf6bb"/>
           <text value="Número do Logadouro:"/>
         </properties>
       </component>
-      <component id="cf6bb" class="javax.swing.JTextField" binding="tfStreetNumber">
+      <component id="c3a30" class="javax.swing.JTextField" binding="jtfStreetNumber">
         <constraints>
           <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
@@ -68,132 +75,94 @@
         </constraints>
         <properties/>
       </component>
-      <component id="af7cf" class="javax.swing.JLabel" binding="lbResidencialNumber">
+      <component id="de2f9" class="javax.swing.JLabel" binding="jlRecidencialNumber">
         <constraints>
           <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <labelFor value="efffc"/>
           <text value="Telefone Residencial:"/>
         </properties>
       </component>
-      <component id="c0b59" class="javax.swing.JLabel" binding="lbComercialNumber">
-        <constraints>
-          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <labelFor value="ca944"/>
-          <text value="Telefone Comercial:"/>
-        </properties>
-      </component>
-      <component id="5bb5c" class="javax.swing.JLabel" binding="lbPersonalNumber">
-        <constraints>
-          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <labelFor value="2629d"/>
-          <text value="Telefone Pessoal:"/>
-        </properties>
-      </component>
-      <component id="ca7a1" class="javax.swing.JLabel" binding="lbCPF">
-        <constraints>
-          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <labelFor value="6d220"/>
-          <text value="CPF:"/>
-        </properties>
-      </component>
-      <component id="ed590" class="javax.swing.JLabel" binding="lbRG">
-        <constraints>
-          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <labelFor value="14222"/>
-          <text value="RG:"/>
-        </properties>
-      </component>
-      <component id="4dbf3" class="javax.swing.JComboBox" binding="cbTypeOfStreets">
-        <constraints>
-          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <model>
-            <item value="Rua"/>
-            <item value="Avenida"/>
-            <item value="Alameda"/>
-            <item value="Travessa"/>
-            <item value="Praça"/>
-          </model>
-        </properties>
-      </component>
-      <component id="efffc" class="javax.swing.JFormattedTextField" binding="ftfResidencialNumber" custom-create="true">
+      <component id="99ed8" class="javax.swing.JFormattedTextField" binding="jftfRecidencialNumber">
         <constraints>
           <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties>
-          <inheritsPopupMenu value="false"/>
-          <text value="( )" noi18n="true"/>
-          <toolTipText value="Digite seu número"/>
-        </properties>
-        <clientProperties>
-          <html.disable class="java.lang.Boolean" value="false"/>
-        </clientProperties>
+        <properties/>
       </component>
-      <component id="ca944" class="javax.swing.JFormattedTextField" binding="ftfComercialNumber">
+      <component id="851f1" class="javax.swing.JLabel" binding="jlComercialNumber">
+        <constraints>
+          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Telefone Comercial:"/>
+        </properties>
+      </component>
+      <component id="cef91" class="javax.swing.JFormattedTextField" binding="ftfComercialNumber">
         <constraints>
           <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
+        <properties/>
+      </component>
+      <component id="f5035" class="javax.swing.JLabel" binding="jlPersonalNumber">
+        <constraints>
+          <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
         <properties>
-          <text value="( )" noi18n="true"/>
+          <text value="Telefone Pessoal:"/>
         </properties>
       </component>
-      <component id="2629d" class="javax.swing.JFormattedTextField" binding="ftfPersonalNumber">
+      <component id="da9df" class="javax.swing.JFormattedTextField" binding="ftfPersonalNumber">
         <constraints>
           <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
+        <properties/>
+      </component>
+      <component id="9ea89" class="javax.swing.JLabel" binding="jlCPF">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
         <properties>
-          <text value="( )" noi18n="true"/>
+          <text value="CPF:"/>
         </properties>
       </component>
-      <component id="6d220" class="javax.swing.JFormattedTextField" binding="ftfCPF">
+      <component id="b75a" class="javax.swing.JFormattedTextField" binding="ftfCPF">
         <constraints>
           <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
+        <properties/>
+      </component>
+      <component id="a6599" class="javax.swing.JLabel" binding="jlRG">
+        <constraints>
+          <grid row="8" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+        </constraints>
         <properties>
-          <text value="000.000.000-00" noi18n="true"/>
+          <text value="RG:"/>
         </properties>
       </component>
-      <component id="14222" class="javax.swing.JFormattedTextField" binding="ftfRG">
+      <component id="9ec12" class="javax.swing.JFormattedTextField" binding="ftfRG">
         <constraints>
           <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
-        <properties>
-          <text value="00.000.000-0" noi18n="true"/>
-        </properties>
+        <properties/>
       </component>
-      <hspacer id="90b06">
+      <hspacer id="4ccff">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="2" anchor="8" fill="2" indent="0" use-parent-layout="false">
-            <minimum-size width="1" height="1"/>
-            <preferred-size width="1" height="1"/>
-            <maximum-size width="1" height="1"/>
-          </grid>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
       </hspacer>
-      <hspacer id="ea744">
+      <hspacer id="6c3c7">
         <constraints>
-          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="2" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="1" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
       </hspacer>
     </children>
