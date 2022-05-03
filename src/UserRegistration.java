@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.text.ParseException;
 
 public class UserRegistration extends JFrame {
@@ -27,6 +29,7 @@ public class UserRegistration extends JFrame {
     private JButton jbUpdateUser;
     private JButton jbRemoveUser;
     private JButton jbSearchUser;
+    private String[] userColection;
     
     public UserRegistration(String title) {
         super(title);
@@ -36,13 +39,14 @@ public class UserRegistration extends JFrame {
         this.pack();
         maskFields();
         createComboBox();
+        createUser();
     }
     
     public void maskFields(){
         try {
             MaskFormatter recidencialNumberMask = new MaskFormatter("####-####");
-            MaskFormatter numberMask = new MaskFormatter("(0##)#####-####");
-            MaskFormatter cpfMask = new MaskFormatter("###.###.###-##");
+            MaskFormatter numberMask = new MaskFormatter("(0##)9####-####");
+            MaskFormatter cpfMask = new MaskFormatter("###.###.##-##");
             MaskFormatter rgMask = new MaskFormatter("##.###.###-#");
             
             jftfRecidencialNumber.setFormatterFactory(new DefaultFormatterFactory(recidencialNumberMask));
@@ -63,6 +67,29 @@ public class UserRegistration extends JFrame {
         } catch (Exception error) {
             System.out.println("Não foi possível selecionar um logadouro");
         }
+    }
+    
+    public void createUser() {
+        jbCreateUser.addActionListener(new ActionListener() {
+    
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                try {
+                    String userName = jtUserName.getText();
+                    String userStreet = jtfStreet.getText();
+                    String userStreetNumber = jtfStreetNumber.getText();
+                    String userRecidencialNumber = jftfRecidencialNumber.getText();
+                    String userComercialNumber = ftfComercialNumber.getText();
+                    String userPersonalNumber = ftfPersonalNumber.getText();
+                    String userCpf = ftfCPF.getText();
+                    String userRg = ftfRG.getText();
+    
+                    userColection = new String[]{userName, userStreet, userStreetNumber, userRecidencialNumber, userComercialNumber, userPersonalNumber, userCpf, userRg};
+                } catch (Exception error) {
+                    System.out.println("Não foi possível criar um usuário");
+                }
+            }
+        });
     }
     
     public static void main(String[] args) {

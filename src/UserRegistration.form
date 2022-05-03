@@ -1,189 +1,208 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="UserRegistration">
-  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="12" column-count="8" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-    <margin top="0" left="0" bottom="0" right="0"/>
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridLayoutManager" row-count="10" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="16" left="32" bottom="16" right="32"/>
     <constraints>
-      <xy x="20" y="20" width="711" height="389"/>
+      <xy x="20" y="20" width="633" height="399"/>
     </constraints>
     <properties>
-      <preferredSize width="600" height="300"/>
+      <foreground color="-9538174"/>
+      <preferredSize width="800" height="400"/>
     </properties>
     <border type="none"/>
     <children>
       <component id="3ad19" class="javax.swing.JLabel" binding="jlUserName">
         <constraints>
-          <grid row="1" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="1"/>
           <text value="Nome Completo:"/>
         </properties>
       </component>
       <component id="42aa0" class="javax.swing.JTextField" binding="jtUserName">
         <constraints>
-          <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
+          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="7" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Roboto Slab" size="16" style="0"/>
           <toolTipText value="Nome completo do usuário"/>
         </properties>
       </component>
       <component id="939f1" class="javax.swing.JLabel" binding="jlStreetType">
         <constraints>
-          <grid row="2" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="1"/>
           <text value="Tipo de Logadouro:"/>
         </properties>
       </component>
       <component id="b65eb" class="javax.swing.JComboBox" binding="jcbStreetType">
         <constraints>
-          <grid row="2" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="0"/>
           <toolTipText value="Nome do tipo de logadouro do endereço do usuário"/>
         </properties>
       </component>
       <component id="68cfb" class="javax.swing.JLabel" binding="jlStreet">
         <constraints>
-          <grid row="3" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="2" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="1"/>
           <text value="Logadouro"/>
         </properties>
       </component>
       <component id="32321" class="javax.swing.JTextField" binding="jtfStreet">
         <constraints>
-          <grid row="3" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="2" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="0"/>
           <toolTipText value="Endereço da recidência"/>
         </properties>
       </component>
       <component id="5b7b5" class="javax.swing.JLabel" binding="jlStreetNumber">
         <constraints>
-          <grid row="4" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="3" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="1"/>
           <text value="Número do Logadouro:"/>
         </properties>
       </component>
       <component id="c3a30" class="javax.swing.JTextField" binding="jtfStreetNumber">
         <constraints>
-          <grid row="4" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="3" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="0"/>
           <toolTipText value="Número da recidência"/>
         </properties>
       </component>
       <component id="de2f9" class="javax.swing.JLabel" binding="jlRecidencialNumber">
         <constraints>
-          <grid row="5" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="4" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="1"/>
           <text value="Telefone Residencial:"/>
         </properties>
       </component>
       <component id="99ed8" class="javax.swing.JFormattedTextField" binding="jftfRecidencialNumber">
         <constraints>
-          <grid row="5" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="4" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="0"/>
           <toolTipText value="Telefone para contato residencial"/>
         </properties>
       </component>
       <component id="851f1" class="javax.swing.JLabel" binding="jlComercialNumber">
         <constraints>
-          <grid row="6" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="5" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="1"/>
           <text value="Telefone Comercial:"/>
         </properties>
       </component>
       <component id="cef91" class="javax.swing.JFormattedTextField" binding="ftfComercialNumber">
         <constraints>
-          <grid row="6" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="5" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="0"/>
           <toolTipText value="Telefone para contato comercial"/>
         </properties>
       </component>
       <component id="f5035" class="javax.swing.JLabel" binding="jlPersonalNumber">
         <constraints>
-          <grid row="7" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="1"/>
           <text value="Telefone Pessoal:"/>
         </properties>
       </component>
       <component id="da9df" class="javax.swing.JFormattedTextField" binding="ftfPersonalNumber">
         <constraints>
-          <grid row="7" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="6" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="0"/>
           <toolTipText value="Telefone para contato pessoal"/>
         </properties>
       </component>
       <component id="9ea89" class="javax.swing.JLabel" binding="jlCPF">
         <constraints>
-          <grid row="8" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="7" column="0" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="1"/>
           <text value="CPF:"/>
         </properties>
       </component>
       <component id="b75a" class="javax.swing.JFormattedTextField" binding="ftfCPF">
         <constraints>
-          <grid row="8" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="7" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="0"/>
           <toolTipText value="Cadastro de Pessoa Fisica do usuário"/>
         </properties>
       </component>
       <component id="a6599" class="javax.swing.JLabel" binding="jlRG">
         <constraints>
-          <grid row="9" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="1"/>
           <text value="RG:"/>
         </properties>
       </component>
       <component id="9ec12" class="javax.swing.JFormattedTextField" binding="ftfRG">
         <constraints>
-          <grid row="9" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+          <grid row="8" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="0"/>
           <toolTipText value="RG do usuário"/>
         </properties>
       </component>
       <component id="84b96" class="javax.swing.JButton" binding="jbCreateUser">
         <constraints>
-          <grid row="10" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="1"/>
           <text value="Adicionar"/>
           <toolTipText value="Adiciona um novo usuário"/>
         </properties>
       </component>
       <component id="66156" class="javax.swing.JButton" binding="jbRemoveUser">
         <constraints>
-          <grid row="10" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="1"/>
           <label value="Excluir"/>
           <text value="Excluir"/>
           <toolTipText value="Exclui um usuário"/>
@@ -191,9 +210,10 @@
       </component>
       <component id="93813" class="javax.swing.JButton" binding="jbUpdateUser">
         <constraints>
-          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="1"/>
           <label value="Alterar"/>
           <text value="Alterar"/>
           <toolTipText value="Altera um usuário"/>
@@ -201,33 +221,14 @@
       </component>
       <component id="bb03f" class="javax.swing.JButton" binding="jbSearchUser">
         <constraints>
-          <grid row="10" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <grid row="9" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
+          <font name="Roboto Light" size="16" style="1"/>
           <text value="Buscar"/>
           <toolTipText value="Busca um usuário em nossa base"/>
         </properties>
       </component>
-      <vspacer id="eabce">
-        <constraints>
-          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </vspacer>
-      <hspacer id="9f957">
-        <constraints>
-          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </hspacer>
-      <hspacer id="f1c0c">
-        <constraints>
-          <grid row="1" column="7" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </hspacer>
-      <vspacer id="f26b3">
-        <constraints>
-          <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </vspacer>
     </children>
   </grid>
 </form>

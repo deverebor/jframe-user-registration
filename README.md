@@ -2,7 +2,7 @@
 
 <p align="center">
 
-![](./.github/assets/2022-05-03_18-12.png)
+![app overview](./.github/assets/images/2022-05-03_19-58.png)
 
 </p>
 
@@ -22,6 +22,10 @@ em um determinado sistema.
 
 - `Java 18`
 - `JFrame`
+
+## 📝 OverView do App
+
+Caso tenha interesse em ver como funciona o app, basta [clicar aqui](./.github/assets/videos/app-overview.mp4).
 
 ---
 
