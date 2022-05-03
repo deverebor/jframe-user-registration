@@ -2,7 +2,7 @@
 
 <p align="center">
 
-![app overview](./.github/assets/images/2022-05-03_19-58.png)
+![app overview](./.github/assets/images/2022-05-03_20-40.png)
 
 </p>
 
@@ -22,10 +22,13 @@ em um determinado sistema.
 
 - `Java 18`
 - `JFrame`
+- `Fonte Roboto`
 
 ## 📝 OverView do App
 
-Caso tenha interesse em ver como funciona o app, basta [clicar aqui](./.github/assets/videos/app-overview.mp4).
+Caso tenha interesse em ver como funciona o app abaixo está um gif.
+
+![overview do app](./.github/assets/videos/app-overview.gif).
 
 ---
 
