@@ -162,8 +162,4 @@ public class UserRegistration extends JFrame {
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(windowClosingEvent);
         dispose();
     }
-    
-    public static void main(String[] args) {
-        UserRegistration myFrame = new UserRegistration();
-    }
 }

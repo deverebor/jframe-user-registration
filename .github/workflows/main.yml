@@ -1,12 +1,12 @@
 name: Java CI
-on: [push, pull_request]
+on: [ pull_request ]
 jobs:
   test:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [ubuntu-latest]
-        java: [ '16', '17', '18' ]
+        java: [ '18' ]
     name: Test UserRegistration on JDK ${{ matrix.java }}, ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
@@ -14,4 +14,4 @@ jobs:
         with:
           distribution: 'zulu' # See 'Supported distributions' for available options
           java-version: ${{ matrix.java }}
-      - run: java -cp java src/UserRegistration
+      - run: javac src/App.java
