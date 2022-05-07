@@ -90,9 +90,11 @@ public class UserRegistration extends JFrame {
                         String userRg = ftfRG.getText();
         
                         Users newUser = new Users(userName, userStreet, userStreetNumber, userRecidencialNumber, userComercialNumber, userPersonalNumber, userCpf, userRg);
-        
+                        CreateNewUser createNewUser = new CreateNewUser();
+                        
+                        createNewUser.createUser(newUser);
+                        
                         JOptionPane.showMessageDialog(mainPanel, "Usuário criado com sucesso!");
-                        System.out.println(newUser.getUserRg());
                     } catch (Exception error) {
                         JOptionPane.showMessageDialog(mainPanel, "Não foi possível criar um usuário!");
                     }
