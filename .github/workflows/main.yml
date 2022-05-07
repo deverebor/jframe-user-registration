@@ -14,4 +14,4 @@ jobs:
         with:
           distribution: 'zulu'
           java-version: {{matrtix.java}}
-      - run: java -cp java UserRegistration.java
+      - run: java -cp java UserRegistration.form.UserRegistration
