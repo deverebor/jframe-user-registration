@@ -13,5 +13,5 @@ jobs:
       - uses: actions/setup-java@v3
         with:
           distribution: 'zulu'
-          java-version: {{matrix.java}}
+          java: {{matrix.java}}
       - run: java -cp java src.UserRegistration
