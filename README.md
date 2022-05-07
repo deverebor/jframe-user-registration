@@ -2,7 +2,7 @@
 
 <p align="center">
 
-![app overview](./.github/assets/images/2022-05-03_20-40.png)
+![app overview](./.github/assets/images/2022-05-07_17-48.png)
 
 </p>
 
@@ -21,14 +21,9 @@ em um determinado sistema.
 ## 🎯 Dependências para rodar a aplicação
 
 - `Java 18`
+- `openJDK 18`
 - `JFrame`
 - `Fonte Roboto`
-
-## 📝 OverView do App
-
-Caso tenha interesse em ver como funciona o app abaixo está um gif.
-
-![overview do app](./.github/assets/videos/app-overview.gif).
 
 ## 🚀 Releases
 
