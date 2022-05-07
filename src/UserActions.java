@@ -33,7 +33,7 @@ public class UserActions {
     }
     
     public void updateUser(User user){
-        if(users == null || pointer < 0){
+        if(pointer < 0){
             System.out.println("[ERROR] No users to update");
         }
         try {

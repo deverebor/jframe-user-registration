@@ -8,15 +8,11 @@ public class User {
     private String userCpf;
     private String userRg;
     
-    public User() {
-        this.setUserName("");
-        this.setUserStreet("");
-        this.setUserStreetNumber("");
-        this.setUserRecidencialNumber("");
-        this.setUserComercialNumber("");
-        this.setUserPersonalNumber("");
-        this.setUserCpf("");
-        this.setUserRg("");
+    public User(){}
+    
+    public User(String newUserName, String newRecidencialNumber){
+        this.setUserName(newUserName);
+        this.setUserRecidencialNumber(newRecidencialNumber);
     }
     
     public User(String userName, String userStreet, String userStreetNumber,

@@ -1,5 +1,3 @@
-import Utils.Util;
-
 import javax.swing.*;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
@@ -33,6 +31,7 @@ public class UserRegistration extends JFrame {
     private JButton jbUpdateUser;
     private JButton jbRemoveUser;
     private JButton jbSearchUser;
+    private JButton jbQuitApp;
     
     private String userName, userStreet, userStreetNumber, userRecidencialNumber, userComercialNumber,
             userPersonalNumber, userCpf, userRg;
@@ -48,13 +47,14 @@ public class UserRegistration extends JFrame {
         createComboBox();
         createNewUser();
         updateExistentUser();
+        quitApp();
     }
     
     public void maskFields(){
         try {
             MaskFormatter recidencialNumberMask = new MaskFormatter("####-####");
             MaskFormatter numberMask = new MaskFormatter("(0##)9####-####");
-            MaskFormatter cpfMask = new MaskFormatter("###.###.##-##");
+            MaskFormatter cpfMask = new MaskFormatter("###.###.###-##");
             MaskFormatter rgMask = new MaskFormatter("##.###.###-#");
             
             jftfRecidencialNumber.setFormatterFactory(new DefaultFormatterFactory(recidencialNumberMask));
@@ -137,6 +137,15 @@ public class UserRegistration extends JFrame {
         ftfPersonalNumber.setText(null);
         ftfCPF.setText(null);
         ftfRG.setText(null);
+    }
+    
+    public void quitApp() {
+        jbQuitApp.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.exit(0);
+            }
+        });
     }
     
     public void closeWindow() {
