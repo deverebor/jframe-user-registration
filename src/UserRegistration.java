@@ -30,6 +30,9 @@ public class UserRegistration extends JFrame {
     private JButton jbRemoveUser;
     private JButton jbSearchUser;
     
+    private String userName, userStreet, userStreetNumber, userRecidencialNumber, userComercialNumber,
+            userPersonalNumber, userCpf, userRg;
+    
     public UserRegistration(String title) {
         super(title);
     
@@ -38,7 +41,7 @@ public class UserRegistration extends JFrame {
         this.pack();
         maskFields();
         createComboBox();
-        createUser();
+        createNewUser();
     }
     
     public void maskFields(){
@@ -68,39 +71,56 @@ public class UserRegistration extends JFrame {
         }
     }
     
-    public void createUser() {
+    public void createNewUser() {
         jbCreateUser.addActionListener(new ActionListener() {
-    
+        
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                if(jtUserName.getText().isEmpty() || jtfStreet.getText().isEmpty() || jtfStreetNumber.getText().isEmpty()
-                        || jftfRecidencialNumber.getText().isEmpty() || ftfComercialNumber.getText().isEmpty()
-                        || ftfPersonalNumber.getText().isEmpty() || ftfCPF.getText().isEmpty() || ftfRG.getText().isEmpty()
-                ) {
-                    JOptionPane.showMessageDialog(mainPanel, "Por favor, preencha todos os campos!");
-                } else {
-                    try {
-                        String userName = jtUserName.getText();
-                        String userStreet = jtfStreet.getText();
-                        String userStreetNumber = jtfStreetNumber.getText();
-                        String userRecidencialNumber = jftfRecidencialNumber.getText();
-                        String userComercialNumber = ftfComercialNumber.getText();
-                        String userPersonalNumber = ftfPersonalNumber.getText();
-                        String userCpf = ftfCPF.getText();
-                        String userRg = ftfRG.getText();
-        
-                        Users newUser = new Users(userName, userStreet, userStreetNumber, userRecidencialNumber, userComercialNumber, userPersonalNumber, userCpf, userRg);
-                        CreateNewUser createNewUser = new CreateNewUser();
-    
-                        createNewUser.createUser(newUser);
-                        
-                        JOptionPane.showMessageDialog(mainPanel, "Usuário criado com sucesso!");
-                    } catch (Exception error) {
-                        JOptionPane.showMessageDialog(mainPanel, "Não foi possível criar um usuário!");
-                    }
+                try {
+                    userName = jtUserName.getText();
+                    userStreet = jtfStreet.getText();
+                    userStreetNumber = jtfStreetNumber.getText();
+                    userRecidencialNumber = jftfRecidencialNumber.getText();
+                    userComercialNumber = ftfComercialNumber.getText();
+                    userPersonalNumber = ftfPersonalNumber.getText();
+                    userCpf = ftfCPF.getText();
+                    userRg = ftfRG.getText();
+                } catch (Exception error) {
+                    JOptionPane.showMessageDialog(mainPanel, "Não foi possível criar o usuário");
+                } finally {
+                    clearFormFields();
                 }
+    
+                validateFormFields();
             }
         });
+    }
+    
+    public void validateFormFields() {
+        if (userName.isEmpty() || userStreet.isEmpty() || userStreetNumber.isEmpty()
+                || userRecidencialNumber.isEmpty() || userComercialNumber.isEmpty()
+                || userPersonalNumber.isEmpty() || userCpf.isEmpty() || userRg.isEmpty()
+        ) {
+            JOptionPane.showMessageDialog(mainPanel, "Por favor, preencha todos os campos!");
+        } else {
+            Users newUser = new Users(userName, userStreet, userStreetNumber, userRecidencialNumber, userComercialNumber, userPersonalNumber, userCpf, userRg);
+            CreateNewUser createNewUser = new CreateNewUser();
+    
+            createNewUser.createUser(newUser);
+    
+            JOptionPane.showMessageDialog(mainPanel, "Usuário criado com sucesso!");
+        }
+    }
+    
+    public void clearFormFields() {
+        jtUserName.setText(null);
+        jtfStreet.setText(null);
+        jtfStreetNumber.setText(null);
+        jftfRecidencialNumber.setText(null);
+        ftfComercialNumber.setText(null);
+        ftfPersonalNumber.setText(null);
+        ftfCPF.setText(null);
+        ftfRG.setText(null);
     }
     
     public static void main(String[] args) {
