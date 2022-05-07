@@ -1,8 +1,12 @@
+import Utils.Util;
+
 import javax.swing.*;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 import java.text.ParseException;
 
 public class UserRegistration extends JFrame {
@@ -33,15 +37,17 @@ public class UserRegistration extends JFrame {
     private String userName, userStreet, userStreetNumber, userRecidencialNumber, userComercialNumber,
             userPersonalNumber, userCpf, userRg;
     
-    public UserRegistration(String title) {
-        super(title);
-    
+    public UserRegistration() {
+        this.setTitle("User Registration");
         this.setContentPane(mainPanel);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.pack();
+        this.setVisible(true);
+        
         maskFields();
         createComboBox();
         createNewUser();
+        updateExistentUser();
     }
     
     public void maskFields(){
@@ -96,6 +102,16 @@ public class UserRegistration extends JFrame {
         });
     }
     
+    public void updateExistentUser() {
+        jbUpdateUser.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                UpdateUser updateUserFrame = new UpdateUser();
+                closeWindow();
+            }
+        });
+    }
+    
     public void validateFormFields() {
         if (userName.isEmpty() || userStreet.isEmpty() || userStreetNumber.isEmpty()
                 || userRecidencialNumber.isEmpty() || userComercialNumber.isEmpty()
@@ -123,8 +139,17 @@ public class UserRegistration extends JFrame {
         ftfRG.setText(null);
     }
     
+    public void closeWindow() {
+        WindowEvent windowClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(windowClosingEvent);
+    }
+    
+    public void openUserRegistrationWindow() {
+        UserRegistration userRegistrationFrame = new UserRegistration();
+        closeWindow();
+    }
+    
     public static void main(String[] args) {
-        UserRegistration myFrame = new UserRegistration("User Registration");
-        myFrame.setVisible(true);
+        UserRegistration myFrame = new UserRegistration();
     }
 }
