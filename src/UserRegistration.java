@@ -91,7 +91,7 @@ public class UserRegistration extends JFrame {
         
                         Users newUser = new Users(userName, userStreet, userStreetNumber, userRecidencialNumber, userComercialNumber, userPersonalNumber, userCpf, userRg);
                         CreateNewUser createNewUser = new CreateNewUser();
-                        
+    
                         createNewUser.createUser(newUser);
                         
                         JOptionPane.showMessageDialog(mainPanel, "Usuário criado com sucesso!");
