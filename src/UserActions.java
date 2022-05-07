@@ -21,11 +21,17 @@ public class UserActions {
     }
     
     public void removeUser(User user){
-        if(users == null || pointer < 0){
-            System.out.println("[ERROR] No users to remove");
+        if(pointer < 0){
+            System.out.println("[ERROR]: No users to remove");
         } else {
-            for(int i = 0; i < pointer; i++){
-                users[i] = null;
+            try {
+                for(int i = 0; i < pointer; i++){
+                    if(user.equals(users[i])){
+                        users[i] = null;
+                    }
+                }
+            } catch (Exception error) {
+                System.out.println("[ERROR] " + error.getMessage());
             }
     
             System.out.println("User removed successfully");
