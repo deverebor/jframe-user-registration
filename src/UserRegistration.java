@@ -2,9 +2,7 @@ import javax.swing.*;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
+import java.awt.event.*;
 import java.text.ParseException;
 
 public class UserRegistration extends JFrame {
@@ -47,6 +45,7 @@ public class UserRegistration extends JFrame {
         createComboBox();
         createNewUser();
         updateExistentUser();
+        removeExistentUser();
         quitApp();
     }
     
@@ -102,16 +101,6 @@ public class UserRegistration extends JFrame {
         });
     }
     
-    public void updateExistentUser() {
-        jbUpdateUser.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                UpdateUser updateUserFrame = new UpdateUser();
-                closeWindow();
-            }
-        });
-    }
-    
     public void validateFormFields() {
         if (userName.isEmpty() || userStreet.isEmpty() || userStreetNumber.isEmpty()
                 || userRecidencialNumber.isEmpty() || userComercialNumber.isEmpty()
@@ -126,6 +115,26 @@ public class UserRegistration extends JFrame {
     
             JOptionPane.showMessageDialog(mainPanel, "Usuário criado com sucesso!");
         }
+    }
+    
+    public void updateExistentUser() {
+        jbUpdateUser.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                UpdateUser updateNewUser = new UpdateUser();
+                closeWindow();
+            }
+        });
+    }
+    
+    public void removeExistentUser() {
+        jbRemoveUser.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                RemoveUser removeUser = new RemoveUser();
+                closeWindow();
+            }
+        });
     }
     
     public void clearFormFields() {
@@ -151,11 +160,7 @@ public class UserRegistration extends JFrame {
     public void closeWindow() {
         WindowEvent windowClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(windowClosingEvent);
-    }
-    
-    public void openUserRegistrationWindow() {
-        UserRegistration userRegistrationFrame = new UserRegistration();
-        closeWindow();
+        dispose();
     }
     
     public static void main(String[] args) {

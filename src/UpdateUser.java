@@ -1,6 +1,8 @@
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowEvent;
 
 public class UpdateUser extends JFrame {
     private JPanel updateUserPanel;
@@ -31,8 +33,7 @@ public class UpdateUser extends JFrame {
         jbReturnButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                UserRegistration mainFrame = new UserRegistration();
-                mainFrame.openUserRegistrationWindow();
+                closeWindow();
             }
         });
     }
@@ -41,22 +42,32 @@ public class UpdateUser extends JFrame {
         jbChangeUser.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                User oldUser = new User();
-                
-                 oldUserName = jtfUserName.getText();
-                 newUserName = jtfNewUserName.getText();
-                 
-                 oldResidencialNumber = ftfUserResidencialNumber.getText();
-                 newResidencialNumber = ftfNewUserResidencialNumber.getText();
+                try {
+                    User oldUser = new User();
     
-                validateFormFields(oldUser);
-                
-                User newUser = new User(newUserName, newResidencialNumber);
-                UserActions createNewUser = new UserActions();
+                    oldUserName = jtfUserName.getText();
+                    newUserName = jtfNewUserName.getText();
     
-                createNewUser.updateUser(newUser);
+                    oldResidencialNumber = ftfUserResidencialNumber.getText();
+                    newResidencialNumber = ftfNewUserResidencialNumber.getText();
     
-                JOptionPane.showMessageDialog(updateUserPanel, "Informações do usuário alteradas com sucesso!");
+                    validateFormFields(oldUser);
+    
+                    User newUser = new User(newUserName, newResidencialNumber);
+                    UserActions createNewUser = new UserActions();
+    
+                    validateFormFields(newUser);
+                    
+                    createNewUser.updateUser(newUser);
+    
+                    JOptionPane.showMessageDialog(updateUserPanel, "Informações do usuário alteradas com sucesso!");
+                    
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(updateUserPanel, "Erro ao alterar usuário!");
+                    
+                } finally {
+                    clearFormFields();
+                }
             }
         });
     }
@@ -69,6 +80,20 @@ public class UpdateUser extends JFrame {
         ) {
             JOptionPane.showMessageDialog(updateUserPanel, "O nome do usuário não pode ser igual ao antigo!");
         }
+    }
+    
+    public void closeWindow() {
+        WindowEvent windowClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSED);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(windowClosingEvent);
+        dispose();
+        UserRegistration mainFrame = new UserRegistration();
+    }
+    
+    public void clearFormFields() {
+        jtfUserName.setText(null);
+        jtfNewUserName.setText(null);
+        ftfUserResidencialNumber.setText(null);
+        ftfNewUserResidencialNumber.setText(null);
     }
     
 }
