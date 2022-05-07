@@ -103,8 +103,8 @@ public class UserRegistration extends JFrame {
         ) {
             JOptionPane.showMessageDialog(mainPanel, "Por favor, preencha todos os campos!");
         } else {
-            Users newUser = new Users(userName, userStreet, userStreetNumber, userRecidencialNumber, userComercialNumber, userPersonalNumber, userCpf, userRg);
-            CreateNewUser createNewUser = new CreateNewUser();
+            User newUser = new User(userName, userStreet, userStreetNumber, userRecidencialNumber, userComercialNumber, userPersonalNumber, userCpf, userRg);
+            UserActions createNewUser = new UserActions();
     
             createNewUser.createUser(newUser);
     

@@ -1,13 +1,13 @@
-public class CreateNewUser {
-    private final Users[] users;
+public class UserActions {
+    private final User[] users;
     private final int numberOfUsers = 25;
     private int pointer = 0;
     
-    public CreateNewUser() {
-        users = new Users[numberOfUsers];
+    public UserActions() {
+        users = new User[numberOfUsers];
     }
     
-    public void createUser(Users user){
+    public void createUser(User user){
         if(pointer <= numberOfUsers){
             try {
                 users[pointer] = user;
@@ -20,7 +20,7 @@ public class CreateNewUser {
         }
     }
     
-    public void removeUser(Users user){
+    public void removeUser(User user){
         if(users == null || pointer < 0){
             System.out.println("[ERROR] No users to remove");
         } else {
@@ -32,7 +32,7 @@ public class CreateNewUser {
         }
     }
     
-    public void updateUser(Users user){
+    public void updateUser(User user){
         if(users == null || pointer < 0){
             System.out.println("[ERROR] No users to update");
         }
@@ -51,7 +51,7 @@ public class CreateNewUser {
         
     }
     
-    public void searchUser(Users user){
+    public void searchUser(User user){
         if(users == null || pointer < 0){
             System.out.println("[ERROR] No users to search");
         }

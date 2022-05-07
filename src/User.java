@@ -1,4 +1,4 @@
-public class Users {
+public class User {
     private String userName;
     private String userStreet;
     private String userStreetNumber;
@@ -8,7 +8,7 @@ public class Users {
     private String userCpf;
     private String userRg;
     
-    public Users() {
+    public User() {
         this.setUserName("");
         this.setUserStreet("");
         this.setUserStreetNumber("");
@@ -19,7 +19,7 @@ public class Users {
         this.setUserRg("");
     }
     
-    public Users(String userName, String userStreet, String userStreetNumber,
+    public User(String userName, String userStreet, String userStreetNumber,
                  String userRecidencialNumber, String userComercialNumber,
                  String userPersonalNumber, String userCpf, String userRg
     ) {
