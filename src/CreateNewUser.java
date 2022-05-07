@@ -1,6 +1,6 @@
 public class CreateNewUser {
-    private Users[] users;
-    private int numberOfUsers = 25;
+    private final Users[] users;
+    private final int numberOfUsers = 25;
     private int pointer = 0;
     
     public CreateNewUser() {
