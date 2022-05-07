@@ -30,6 +30,12 @@ Caso tenha interesse em ver como funciona o app abaixo está um gif.
 
 ![overview do app](./.github/assets/videos/app-overview.gif).
 
+## 🚀 Releases
+
+- [v1.0.0](https://github.com/deverebor/jframe-user-registration/releases/tag/1.0)
+
+Caso queira uma release mais recente ou especifica, basta [clicar aqui](https://github.com/deverebor/jframe-user-registration/releases/).
+
 ---
 
 <p align='center'>
