@@ -29,7 +29,6 @@ public class UserRegistration extends JFrame {
     private JButton jbUpdateUser;
     private JButton jbRemoveUser;
     private JButton jbSearchUser;
-    private String[] userColection;
     
     public UserRegistration(String title) {
         super(title);
@@ -74,19 +73,29 @@ public class UserRegistration extends JFrame {
     
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
-                try {
-                    String userName = jtUserName.getText();
-                    String userStreet = jtfStreet.getText();
-                    String userStreetNumber = jtfStreetNumber.getText();
-                    String userRecidencialNumber = jftfRecidencialNumber.getText();
-                    String userComercialNumber = ftfComercialNumber.getText();
-                    String userPersonalNumber = ftfPersonalNumber.getText();
-                    String userCpf = ftfCPF.getText();
-                    String userRg = ftfRG.getText();
-    
-                    userColection = new String[]{userName, userStreet, userStreetNumber, userRecidencialNumber, userComercialNumber, userPersonalNumber, userCpf, userRg};
-                } catch (Exception error) {
-                    System.out.println("Não foi possível criar um usuário");
+                if(jtUserName.getText().isEmpty() || jtfStreet.getText().isEmpty() || jtfStreetNumber.getText().isEmpty()
+                        || jftfRecidencialNumber.getText().isEmpty() || ftfComercialNumber.getText().isEmpty()
+                        || ftfPersonalNumber.getText().isEmpty() || ftfCPF.getText().isEmpty() || ftfRG.getText().isEmpty()
+                ) {
+                    JOptionPane.showMessageDialog(mainPanel, "Por favor, preencha todos os campos!");
+                } else {
+                    try {
+                        String userName = jtUserName.getText();
+                        String userStreet = jtfStreet.getText();
+                        String userStreetNumber = jtfStreetNumber.getText();
+                        String userRecidencialNumber = jftfRecidencialNumber.getText();
+                        String userComercialNumber = ftfComercialNumber.getText();
+                        String userPersonalNumber = ftfPersonalNumber.getText();
+                        String userCpf = ftfCPF.getText();
+                        String userRg = ftfRG.getText();
+        
+                        Users newUser = new Users(userName, userStreet, userStreetNumber, userRecidencialNumber, userComercialNumber, userPersonalNumber, userCpf, userRg);
+        
+                        JOptionPane.showMessageDialog(mainPanel, "Usuário criado com sucesso!");
+                        System.out.println(newUser.getUserRg());
+                    } catch (Exception error) {
+                        JOptionPane.showMessageDialog(mainPanel, "Não foi possível criar um usuário!");
+                    }
                 }
             }
         });
