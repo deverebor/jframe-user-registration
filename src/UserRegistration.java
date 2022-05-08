@@ -121,7 +121,9 @@ public class UserRegistration extends JFrame {
     
             createNewUser.createUser(newUser);
     
-            JOptionPane.showMessageDialog(mainPanel, "Usuário criado com sucesso!");
+            JOptionPane.showMessageDialog(mainPanel,
+                    "O usuário: " + newUser.getUserName() +" foi criado(a) com " + "sucesso!"
+            );
         }
     }
     
