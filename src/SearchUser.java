@@ -14,8 +14,8 @@ public class SearchUser extends JFrame {
     private JLabel jlSearchUserCpf;
     private JFormattedTextField ftfSearchUserCpf;
     private JScrollPane jspSearchedResult;
-    private JTextField tfSearchUserName;
     private JLabel lbSearchUserName;
+    private JTextField tfSearchUserName;
     private JLabel jlUserResidencialNumber;
     private JFormattedTextField ftfSearchUserRecidencialNumber;
     private String userCpf, userName,userRecidencialNumber;
@@ -32,16 +32,6 @@ public class SearchUser extends JFrame {
         returnToMenu();
         searchExistentUser();
         maskCpfField();
-    }
-    
-    public void returnToMenu() {
-        jbReturnToMenu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                UserRegistration mainFrame = new UserRegistration();
-                closeWindow();
-            }
-        });
     }
     
     public void searchExistentUser() {
@@ -133,9 +123,22 @@ public class SearchUser extends JFrame {
     public void closeWindow() {
         WindowEvent windowClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(windowClosingEvent);
+        dispose();
+        UserRegistration mainFrame = new UserRegistration();
+    }
+    
+    public void returnToMenu() {
+        jbReturnToMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                closeWindow();
+            }
+        });
     }
     
     public void clearFormFields() {
+        tfSearchUserName.setText(null);
         ftfSearchUserCpf.setText(null);
+        ftfSearchUserRecidencialNumber.setText(null);
     }
 }
