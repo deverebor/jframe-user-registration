@@ -10,8 +10,10 @@
 
 ## 📢 Sobre a Questão
 
-Devemos criar um programa utilizando a biblioteca JFrame responsável que será responsável por cadastrar um usuário 
-em um determinado sistema.
+Devemos criar um programa utilizando a biblioteca JFrame que será responsável por cadastrar um usuário 
+em um determinado sistema. Onde um funcionário terá total acesso ao sistema, para adicionar, remover, alterar ou buscar um usuário.
+
+A aplicação deverá ser construída em Java, utilizando a biblioteca JFrame e as ações devem ser em runtime.
 
 ### 📋 Critérios avaliados
 
@@ -48,6 +50,7 @@ o intuito de melhorar a qualidade do código.
 - `Adaptação da classe UTILS`: Será removido algumas lógicas que são repetitivas para um Utils, onde todo o contexto 
   poderá utilizar.
 - `Reescrita de algumas regras de négocio`: Será reescrita algumas regras de négocio para melhorar a performance da aplicação.
+- `Adição de um banco de dados`: Será adicionado um banco de dados para armazenar os usuários e não mais em runtime.
 
 ## 🚀 Releases
 
