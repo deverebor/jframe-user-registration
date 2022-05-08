@@ -1,3 +1,5 @@
+import Utils.UserException;
+
 public class User {
     private String userName;
     private String userStreet;
@@ -10,41 +12,49 @@ public class User {
     
     public User() {}
     
-    public User(String userCpf) {
+    public User(String userCpf) throws UserException {
         if(userCpf.length() == 14) {
             this.setUserCpf(userCpf);
         } else {
-            System.out.println("CPF inválido");
+           throw new UserException("CPF inválido");
         }
     }
     
-    public User(String userCpf, String userName, String userRecidencialNumber) {
+    public User(String userCpf, String userName, String userRecidencialNumber) throws UserException {
         if(userCpf.length() == 14) {
             this.setUserCpf(userCpf);
             this.setUserName(userName);
             this.setUserRecidencialNumber(userRecidencialNumber);
         } else {
-            System.out.println("CPF inválido");
+            throw new UserException("CPF inválido");
         }
     }
     
-    public User(String newUserName, String newRecidencialNumber){
-        this.setUserName(newUserName);
-        this.setUserRecidencialNumber(newRecidencialNumber);
+    public User(String newUserName, String newRecidencialNumber) throws UserException{
+        if(newUserName.length() > 0 && newRecidencialNumber.length() > 0) {
+            this.setUserName(newUserName);
+            this.setUserRecidencialNumber(newRecidencialNumber);
+        } else {
+            throw new UserException("Nome e Telefone Recidencial inválidos");
+        }
     }
     
     public User(String userName, String userStreet, String userStreetNumber,
                  String userRecidencialNumber, String userComercialNumber,
                  String userPersonalNumber, String userCpf, String userRg
-    ) {
-        this.setUserName(userName);
-        this.setUserStreet(userStreet);
-        this.setUserStreetNumber(userStreetNumber);
-        this.setUserRecidencialNumber(userRecidencialNumber);
-        this.setUserComercialNumber(userComercialNumber);
-        this.setUserPersonalNumber(userPersonalNumber);
-        this.setUserCpf(userCpf);
-        this.setUserRg(userRg);
+    ) throws UserException {
+        try {
+            this.setUserName(userName);
+            this.setUserStreet(userStreet);
+            this.setUserStreetNumber(userStreetNumber);
+            this.setUserRecidencialNumber(userRecidencialNumber);
+            this.setUserComercialNumber(userComercialNumber);
+            this.setUserPersonalNumber(userPersonalNumber);
+            this.setUserCpf(userCpf);
+            this.setUserRg(userRg);
+        } catch (Exception error) {
+            throw new UserException("Erro ao criar um usuário");
+        }
     }
     
     public String getUserName() {

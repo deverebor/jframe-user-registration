@@ -1,3 +1,5 @@
+import Utils.UserActionsException;
+
 public class UserActions {
     private final User[] users;
     private final int numberOfUsers = 25;
@@ -7,7 +9,7 @@ public class UserActions {
         users = new User[numberOfUsers];
     }
     
-    public void createUser(User user){
+    public void createUser(User user) throws UserActionsException {
         if(pointer <= numberOfUsers){
             try {
                 users[pointer] = user;
@@ -15,14 +17,14 @@ public class UserActions {
     
                 System.out.println("User created successfully");
             } catch (Exception error) {
-                System.out.println("[ERROR] " + error.getMessage());
+                throw new UserActionsException("Can not create user: " + error.getMessage());
             }
         }
     }
     
-    public void removeUser(User user){
+    public void removeUser(User user) throws UserActionsException {
         if(pointer < 0){
-            System.out.println("[ERROR]: No users to remove");
+            throw new UserActionsException("You can not remove users, because there are no users");
         } else {
             try {
                 for(int i = 0; i < pointer; i++){
@@ -31,16 +33,16 @@ public class UserActions {
                     }
                 }
             } catch (Exception error) {
-                System.out.println("[ERROR] " + error.getMessage());
+                throw new UserActionsException("The user you tries to remove docent exists " + error.getMessage());
             }
     
             System.out.println("User removed successfully");
         }
     }
     
-    public void updateUser(User user){
+    public void updateUser(User user) throws UserActionsException{
         if(pointer < 0){
-            System.out.println("[ERROR] No users to update");
+            throw new UserActionsException("There no users to update");
         }
         try {
             for(int i = 0; i < pointer; i++){
@@ -48,18 +50,18 @@ public class UserActions {
                     users[i] = user;
                     System.out.println("User updated successfully");
                 } else {
-                    System.out.println("[ERROR] User not found");
+                    throw new UserActionsException("The user you tries to update does not exists");
                 }
             }
         } catch (Exception error) {
-            System.out.println("[ERROR] " + error.getMessage());
+            throw new UserActionsException("Error trying to update an user" + error.getMessage());
         }
         
     }
     
-    public void searchUser(User user){
+    public void searchUser(User user) throws UserActionsException{
         if(pointer <= 0){
-            System.out.println("[ERROR] No users to search");
+            throw new UserActionsException("There are no users to search");
         }
         try {
             for(int i = 0; i < pointer; i++){
@@ -68,7 +70,7 @@ public class UserActions {
                 }
             }
         } catch (Exception error) {
-            System.out.println("[ERROR] " + error.getMessage());
+            throw new UserActionsException("The user you trie to search does not exists " + error.getMessage());
         } finally {
             System.out.println("User found successfully");
         }

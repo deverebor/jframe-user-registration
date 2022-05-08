@@ -1,3 +1,6 @@
+import Utils.UserActionsException;
+import Utils.UserException;
+
 import javax.swing.*;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
@@ -97,12 +100,16 @@ public class UserRegistration extends JFrame {
                     clearFormFields();
                 }
     
-                validateFormFields();
+                try {
+                    validateFormFields();
+                } catch (UserActionsException | UserException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
     }
     
-    public void validateFormFields() {
+    public void validateFormFields() throws UserActionsException, UserException {
         if (userName.isEmpty() || userStreet.isEmpty() || userStreetNumber.isEmpty()
                 || userRecidencialNumber.isEmpty() || userComercialNumber.isEmpty()
                 || userPersonalNumber.isEmpty() || userCpf.isEmpty() || userRg.isEmpty()
@@ -148,15 +155,6 @@ public class UserRegistration extends JFrame {
         });
     }
     
-    public void quitApp() {
-        jbQuitApp.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                System.exit(0);
-            }
-        });
-    }
-    
     public void clearFormFields() {
         jtUserName.setText(null);
         jtfStreet.setText(null);
@@ -172,5 +170,14 @@ public class UserRegistration extends JFrame {
         WindowEvent windowClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(windowClosingEvent);
         dispose();
+    }
+    
+    public void quitApp() {
+        jbQuitApp.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                System.exit(0);
+            }
+        });
     }
 }

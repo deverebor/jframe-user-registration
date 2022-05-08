@@ -29,15 +29,6 @@ public class UpdateUser extends JFrame {
         changeExistentUser();
     }
     
-    public void returnToMenu() {
-        jbReturnButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                closeWindow();
-            }
-        });
-    }
-    
     public void changeExistentUser() {
         jbChangeUser.addActionListener(new ActionListener() {
             @Override
@@ -87,6 +78,15 @@ public class UpdateUser extends JFrame {
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(windowClosingEvent);
         dispose();
         UserRegistration mainFrame = new UserRegistration();
+    }
+    
+    public void returnToMenu() {
+        jbReturnButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                closeWindow();
+            }
+        });
     }
     
     public void clearFormFields() {

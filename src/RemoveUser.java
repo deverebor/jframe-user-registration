@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.text.ParseException;
-import java.util.Objects;
 
 public class RemoveUser extends JFrame {
     
@@ -28,16 +27,6 @@ public class RemoveUser extends JFrame {
         maskCpfField();
         returnToMenu();
         removeExistentUser();
-    }
-    
-    public void returnToMenu() {
-        jbReturnToMenu.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent actionEvent) {
-                UserRegistration mainFrame = new UserRegistration();
-                closeWindow();
-            }
-        });
     }
     
     public void removeExistentUser() {
@@ -72,11 +61,6 @@ public class RemoveUser extends JFrame {
         }
     }
     
-    public void closeWindow() {
-        WindowEvent windowClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
-        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(windowClosingEvent);
-    }
-    
     public void maskCpfField(){
         try {
             MaskFormatter cpfMask = new MaskFormatter("###.###.###-##");
@@ -86,6 +70,22 @@ public class RemoveUser extends JFrame {
             error.getMessage();
         }
         
+    }
+    
+    public void closeWindow() {
+        WindowEvent windowClosingEvent = new WindowEvent(this, WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(windowClosingEvent);
+        dispose();
+        UserRegistration mainFrame = new UserRegistration();
+    }
+    
+    public void returnToMenu() {
+        jbReturnToMenu.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                closeWindow();
+            }
+        });
     }
     
     public void clearFormFields() {
