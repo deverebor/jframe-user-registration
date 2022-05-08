@@ -18,6 +18,16 @@ public class User {
         }
     }
     
+    public User(String userCpf, String userName, String userRecidencialNumber) {
+        if(userCpf.length() == 14) {
+            this.setUserCpf(userCpf);
+            this.setUserName(userName);
+            this.setUserRecidencialNumber(userRecidencialNumber);
+        } else {
+            System.out.println("CPF inválido");
+        }
+    }
+    
     public User(String newUserName, String newRecidencialNumber){
         this.setUserName(newUserName);
         this.setUserRecidencialNumber(newRecidencialNumber);

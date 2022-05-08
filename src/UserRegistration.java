@@ -46,6 +46,7 @@ public class UserRegistration extends JFrame {
         createNewUser();
         updateExistentUser();
         removeExistentUser();
+        searchExistentUser();
         quitApp();
     }
     
@@ -137,15 +138,14 @@ public class UserRegistration extends JFrame {
         });
     }
     
-    public void clearFormFields() {
-        jtUserName.setText(null);
-        jtfStreet.setText(null);
-        jtfStreetNumber.setText(null);
-        jftfRecidencialNumber.setText(null);
-        ftfComercialNumber.setText(null);
-        ftfPersonalNumber.setText(null);
-        ftfCPF.setText(null);
-        ftfRG.setText(null);
+    public void searchExistentUser() {
+        jbSearchUser.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+                SearchUser searchUser = new SearchUser();
+                closeWindow();
+            }
+        });
     }
     
     public void quitApp() {
@@ -155,6 +155,17 @@ public class UserRegistration extends JFrame {
                 System.exit(0);
             }
         });
+    }
+    
+    public void clearFormFields() {
+        jtUserName.setText(null);
+        jtfStreet.setText(null);
+        jtfStreetNumber.setText(null);
+        jftfRecidencialNumber.setText(null);
+        ftfComercialNumber.setText(null);
+        ftfPersonalNumber.setText(null);
+        ftfCPF.setText(null);
+        ftfRG.setText(null);
     }
     
     public void closeWindow() {

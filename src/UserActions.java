@@ -58,22 +58,19 @@ public class UserActions {
     }
     
     public void searchUser(User user){
-        if(users == null || pointer < 0){
+        if(pointer <= 0){
             System.out.println("[ERROR] No users to search");
         }
         try {
             for(int i = 0; i < pointer; i++){
-                users[i].getUserName();
-                users[i].getUserStreet();
-                users[i].getUserStreetNumber();
-                users[i].getUserComercialNumber();
-                users[i].getUserRecidencialNumber();
-                users[i].getUserPersonalNumber();
-                users[i].getUserCpf();
-                users[i].getUserRg();
+                if(user.getUserCpf().equals(users[i].getUserCpf())){
+                    user = users[i];
+                }
             }
         } catch (Exception error) {
             System.out.println("[ERROR] " + error.getMessage());
+        } finally {
+            System.out.println("User found successfully");
         }
     }
 }
