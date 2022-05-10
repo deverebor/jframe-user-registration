@@ -2,7 +2,7 @@
 
 <p align="center">
 
-![app overview](https://github.com/deverebor/jframe-user-registration/blob/main/.github/assets/images/2022-05-07_17-48.png)
+<img align="center" src="https://github.com/deverebor/jframe-user-registration/blob/main/.github/assets/images/2022-05-07_17-48.png" />
 
 </p>
 
