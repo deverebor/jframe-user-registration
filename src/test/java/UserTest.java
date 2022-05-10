@@ -97,7 +97,7 @@ public class UserTest {
         assertEquals("CPF inválido", newUserExceptionCPFNull.getMessage());
         
         UserException newUserExceptionNameReciEmpty = assertThrows(UserException.class, () -> {
-            User user = new User(null, "Adeobaldo", "11111111");
+            User user = new User("1121212", "", "");
         });
         
         assertEquals("Nome ou senha não podem ser vazios", newUserExceptionNameReciEmpty.getMessage());
