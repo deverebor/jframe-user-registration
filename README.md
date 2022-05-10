@@ -55,12 +55,13 @@ o intuito de melhorar a qualidade do código.
 - [ ] `Adaptação da classe UTILS`: Será removido algumas lógicas repetitivas, que de alguma forma poderam ser 
   reaproveiadas em mais de um contexto para o Utils.
 - [x] `Reescrita de algumas regras de négocio`: Será reescrita algumas regras de négocio para melhorar a desempenho da 
-  aplicação.
+  aplicação. **_[PR da melhoria](https://github.com/deverebor/jframe-user-registration/pull/12)_**
 - [x] `Criar testes unitarios para as classes`: Será criado testes unitários para as classes, assim assegurando a 
-  completa estabilidade do software.
+  completa estabilidade do software. **_[PR da melhoria](https://github.com/deverebor/jframe-user-registration/pull/12)_**
 - [x] `Criar classes de exception para as determinadas classes: User & UserActions`: Será criado uma classe de 
-  exception para, conseguirmos tratar as exceções que acontecem na aplicação.
-- [x] `Pequenos ajustes na interface`: Será realizado alguns ajustes na interface, para melhorar a experiência do usuário.
+  exception para, conseguirmos tratar as exceções que acontecem na aplicação. **_[PR da melhoria](https://github.com/deverebor/jframe-user-registration/pull/12)_**
+- [x] `Pequenos ajustes na interface`: Será realizado alguns ajustes na interface, para melhorar a experiência do 
+  usuário. **_[PR da melhoria](https://github.com/deverebor/jframe-user-registration/pull/12)_**
 - [ ] `Adição de um banco de dados`: Será adicionado um banco de dados para armazenar os usuários e não mais em runtime.
 
 ## 🚀 Releases
