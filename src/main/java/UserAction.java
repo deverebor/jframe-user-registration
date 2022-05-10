@@ -41,21 +41,27 @@ public class UserAction {
         }
     }
     
-    public void updateUser(User user) throws UserActionException {
+    public void updateUser(String userName, String userRecidencialNumber) throws UserActionException {
         if(pointer < 0){
             throw new UserActionException("There no users to update");
         }
         try {
             for(int i = 0; i < pointer; i++){
-                if(user.equals(users[i])){
-                    users[i] = user;
-                    System.out.println("User updated successfully");
-                } else {
-                    throw new UserActionException("The user you tries to update does not exists");
+                if(
+                        userName.equals(users[i].getUserName())
+                        && userRecidencialNumber.equals(users[i].getUserRecidencialNumber())
+                ){
+                    throw new UserActionException("The new user data is the same as the old one");
+                } else if(userName.length() == 0 || userRecidencialNumber.length() == 0){
+                    throw new UserActionException("The new user data is empty");
+                }
+                else {
+                    users[i].setUserName(userName);
+                    users[i].setUserRecidencialNumber(userRecidencialNumber);
                 }
             }
         } catch (Exception error) {
-            throw new UserActionException("Error trying to update an user" + error.getMessage());
+            throw new UserActionException("Can not update user");
         }
         
     }

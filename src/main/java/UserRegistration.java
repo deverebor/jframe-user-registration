@@ -53,33 +53,6 @@ public class UserRegistration extends JFrame {
         quitApp();
     }
     
-    public void maskFields(){
-        try {
-            MaskFormatter recidencialNumberMask = new MaskFormatter("####-####");
-            MaskFormatter numberMask = new MaskFormatter("(0##)9####-####");
-            MaskFormatter cpfMask = new MaskFormatter("###.###.###-##");
-            MaskFormatter rgMask = new MaskFormatter("##.###.###-#");
-            
-            jftfRecidencialNumber.setFormatterFactory(new DefaultFormatterFactory(recidencialNumberMask));
-            ftfComercialNumber.setFormatterFactory(new DefaultFormatterFactory(numberMask));
-            ftfPersonalNumber.setFormatterFactory(new DefaultFormatterFactory(numberMask));
-            ftfCPF.setFormatterFactory(new DefaultFormatterFactory(cpfMask));
-            ftfRG.setFormatterFactory(new DefaultFormatterFactory(rgMask));
-        } catch (ParseException error) {
-            error.getMessage();
-        }
-        
-    }
-    
-    public void createComboBox(){
-        try {
-        String[] streetTypes = {"Rua", "Avenida", "Alameda", "Praça", "Travessa"};
-        jcbStreetType.setModel(new DefaultComboBoxModel<>(streetTypes));
-        } catch (Exception error) {
-            System.out.println("Não foi possível selecionar um logadouro");
-        }
-    }
-    
     public void createNewUser() {
         jbCreateUser.addActionListener(new ActionListener() {
         
@@ -115,6 +88,10 @@ public class UserRegistration extends JFrame {
                 || userPersonalNumber.isEmpty() || userCpf.isEmpty() || userRg.isEmpty()
         ) {
             JOptionPane.showMessageDialog(mainPanel, "Por favor, preencha todos os campos!");
+        } else if(userName.length() < 3 || !Character.isUpperCase(userName.charAt(0))) {
+            JOptionPane.showMessageDialog(mainPanel,
+                    "O nome de usuário deve ter no mínimo 3 caracteres! E começar com uma letra maiúscula!"
+            );
         } else {
             User newUser = new User(userName, userStreet, userStreetNumber, userRecidencialNumber, userComercialNumber, userPersonalNumber, userCpf, userRg);
             UserAction createNewUser = new UserAction();
@@ -166,6 +143,33 @@ public class UserRegistration extends JFrame {
         ftfPersonalNumber.setText(null);
         ftfCPF.setText(null);
         ftfRG.setText(null);
+    }
+    
+    public void createComboBox(){
+        try {
+            String[] streetTypes = {"Rua", "Avenida", "Alameda", "Praça", "Travessa"};
+            jcbStreetType.setModel(new DefaultComboBoxModel<>(streetTypes));
+        } catch (Exception error) {
+            System.out.println("Não foi possível selecionar um logadouro");
+        }
+    }
+    
+    public void maskFields(){
+        try {
+            MaskFormatter recidencialNumberMask = new MaskFormatter("####-####");
+            MaskFormatter numberMask = new MaskFormatter("(0##)9####-####");
+            MaskFormatter cpfMask = new MaskFormatter("###.###.###-##");
+            MaskFormatter rgMask = new MaskFormatter("##.###.###-#");
+            
+            jftfRecidencialNumber.setFormatterFactory(new DefaultFormatterFactory(recidencialNumberMask));
+            ftfComercialNumber.setFormatterFactory(new DefaultFormatterFactory(numberMask));
+            ftfPersonalNumber.setFormatterFactory(new DefaultFormatterFactory(numberMask));
+            ftfCPF.setFormatterFactory(new DefaultFormatterFactory(cpfMask));
+            ftfRG.setFormatterFactory(new DefaultFormatterFactory(rgMask));
+        } catch (ParseException error) {
+            error.getMessage();
+        }
+        
     }
     
     public void closeWindow() {
