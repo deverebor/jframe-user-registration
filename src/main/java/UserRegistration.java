@@ -1,4 +1,4 @@
-import Utils.UserActionsException;
+import Utils.UserActionException;
 import Utils.UserException;
 
 import javax.swing.*;
@@ -102,14 +102,14 @@ public class UserRegistration extends JFrame {
     
                 try {
                     validateFormFields();
-                } catch (UserActionsException | UserException e) {
+                } catch (UserActionException | UserException e) {
                     throw new RuntimeException(e);
                 }
             }
         });
     }
     
-    public void validateFormFields() throws UserActionsException, UserException {
+    public void validateFormFields() throws UserActionException, UserException {
         if (userName.isEmpty() || userStreet.isEmpty() || userStreetNumber.isEmpty()
                 || userRecidencialNumber.isEmpty() || userComercialNumber.isEmpty()
                 || userPersonalNumber.isEmpty() || userCpf.isEmpty() || userRg.isEmpty()
@@ -117,7 +117,7 @@ public class UserRegistration extends JFrame {
             JOptionPane.showMessageDialog(mainPanel, "Por favor, preencha todos os campos!");
         } else {
             User newUser = new User(userName, userStreet, userStreetNumber, userRecidencialNumber, userComercialNumber, userPersonalNumber, userCpf, userRg);
-            UserActions createNewUser = new UserActions();
+            UserAction createNewUser = new UserAction();
     
             createNewUser.createUser(newUser);
     

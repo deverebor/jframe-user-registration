@@ -16,30 +16,28 @@ public class User {
         if(userCpf.length() == 14) {
             this.setUserCpf(userCpf);
         } else {
-           throw new UserException("CPF inválido");
+           throw new UserException("Invalid CPF");
         }
     }
     
     public User(String newUserName, String newRecidencialNumber) throws UserException{
         
         if(newUserName == null || newRecidencialNumber == null) {
-            throw new UserException("Nome e Telefone Recidencial inválidos");
+            throw new UserException("Name and recidencial number cannot be null");
             
         } else if(newUserName.length() == 0 || newRecidencialNumber.length() == 0) {
-            throw new UserException("Nome ou senha não podem ser vazios");
+            throw new UserException("Name or recidencial number cannot be empty");
         } else {
             this.setUserName(newUserName);
             this.setUserRecidencialNumber(newRecidencialNumber);
-    
-            System.out.println("Usuário criado com sucesso");
         }
     }
     
     public User(String userCpf, String userName, String userRecidencialNumber) throws UserException {
         if(userCpf == null) {
-            throw new UserException("CPF inválido");
+            throw new UserException("Invalid CPF");
         } else if(userName.length() == 0 || userRecidencialNumber.length() == 0) {
-            throw new UserException("Nome ou senha não podem ser vazios");
+            throw new UserException("Name or recidencial number cannot be empty");
         } else {
             this.setUserCpf(userCpf);
             this.setUserName(userName);
@@ -56,9 +54,9 @@ public class User {
                         || userRecidencialNumber == null || userComercialNumber == null
                         || userPersonalNumber == null || userCpf == null || userRg == null
         ) {
-            throw new UserException("Não podem haver campos vazios");
+            throw new UserException("Can not create with empty fileds");
         } else if(userName.length() == 0 || userCpf.length() == 0 || userRg.length() == 0) {
-            throw new UserException("Não podem haver campos vazios");
+            throw new UserException("Can not create with empty fileds");
         } else {
             this.setUserName(userName);
             this.setUserStreet(userStreet);

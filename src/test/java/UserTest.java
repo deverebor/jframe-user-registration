@@ -52,7 +52,7 @@ public class UserTest {
             User user = new User("111.111.111-11-111");
         });
         
-        assertEquals("CPF inválido", userException.getMessage());
+        assertEquals("Invalid CPF", userException.getMessage());
     }
     
     @Test
@@ -61,31 +61,31 @@ public class UserTest {
             User user = new User(null, null);
         });
         
-        assertEquals("Nome e Telefone Recidencial inválidos", newUserExceptionBothNull.getMessage());
+        assertEquals("Name and recidencial number cannot be null", newUserExceptionBothNull.getMessage());
     
         UserException newUserExceptionNameNull = assertThrows(UserException.class, () -> {
             User user = new User(null, "123456789");
         });
         
-        assertEquals("Nome e Telefone Recidencial inválidos", newUserExceptionNameNull.getMessage());
+        assertEquals("Name and recidencial number cannot be null", newUserExceptionNameNull.getMessage());
     
         UserException newUserExceptionRecNull = assertThrows(UserException.class, () -> {
             User user = new User("Adeobaldo", null);
         });
     
-        assertEquals("Nome e Telefone Recidencial inválidos", newUserExceptionRecNull.getMessage());
+        assertEquals("Name and recidencial number cannot be null", newUserExceptionRecNull.getMessage());
     
         UserException newUserExceptionNameEmpty = assertThrows(UserException.class, () -> {
             User user = new User("", "11111111");
         });
     
-        assertEquals("Nome ou senha não podem ser vazios", newUserExceptionNameEmpty.getMessage());
+        assertEquals("Name or recidencial number cannot be empty", newUserExceptionNameEmpty.getMessage());
     
         UserException newUserExceptionRecEmpty = assertThrows(UserException.class, () -> {
             User user = new User("Adeobaldo", "");
         });
     
-        assertEquals("Nome ou senha não podem ser vazios", newUserExceptionRecEmpty.getMessage());
+        assertEquals("Name or recidencial number cannot be empty", newUserExceptionRecEmpty.getMessage());
     }
     
     @Test
@@ -94,13 +94,13 @@ public class UserTest {
             User user = new User(null, "Adeobaldo", "123456789");
         });
         
-        assertEquals("CPF inválido", newUserExceptionCPFNull.getMessage());
+        assertEquals("Invalid CPF", newUserExceptionCPFNull.getMessage());
         
         UserException newUserExceptionNameReciEmpty = assertThrows(UserException.class, () -> {
             User user = new User("1121212", "", "");
         });
         
-        assertEquals("Nome ou senha não podem ser vazios", newUserExceptionNameReciEmpty.getMessage());
+        assertEquals("Name or recidencial number cannot be empty", newUserExceptionNameReciEmpty.getMessage());
     }
     
     @Test
@@ -113,7 +113,7 @@ public class UserTest {
             );
         });
         
-        assertEquals("Não podem haver campos vazios", newUserExceptionAllNull.getMessage());
+        assertEquals("Can not create with empty fileds", newUserExceptionAllNull.getMessage());
     
         UserException newUserExceptionUserNameCpfRGEmpty = assertThrows(UserException.class, () -> {
             User user = new User(
@@ -123,6 +123,6 @@ public class UserTest {
             );
         });
     
-        assertEquals("Não podem haver campos vazios", newUserExceptionAllNull.getMessage());
+        assertEquals("Can not create with empty fileds", newUserExceptionAllNull.getMessage());
     }
 }

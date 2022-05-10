@@ -44,7 +44,7 @@ public class SearchUser extends JFrame {
                     userRecidencialNumber = ftfSearchUserRecidencialNumber.getText();
         
                     User oldUser = new User(userCpf, userName, userRecidencialNumber);
-                    UserActions searchNewUser = new UserActions();
+                    UserAction searchNewUser = new UserAction();
         
                     validateFormFields(oldUser);
                     if(oldUser.getUserCpf().equals(userCpf)) {

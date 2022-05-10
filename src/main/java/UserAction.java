@@ -1,30 +1,31 @@
-import Utils.UserActionsException;
+import Utils.UserActionException;
 
-public class UserActions {
+public class UserAction {
     private final User[] users;
-    private final int numberOfUsers = 25;
+    private final int maxNumberOfUsers = 25;
     private int pointer = 0;
     
-    public UserActions() {
-        users = new User[numberOfUsers];
+    public UserAction() {
+        users = new User[maxNumberOfUsers];
     }
     
-    public void createUser(User user) throws UserActionsException {
-        if(pointer <= numberOfUsers){
+    public void createUser(User user) throws UserActionException {
+        if(pointer < maxNumberOfUsers){
             try {
                 users[pointer] = user;
                 this.pointer++;
-    
-                System.out.println("User created successfully");
+                
             } catch (Exception error) {
-                throw new UserActionsException("Can not create user: " + error.getMessage());
+                throw new UserActionException("Can not create user");
             }
+        } else {
+            throw new UserActionException("Maximum number of users reached!");
         }
     }
     
-    public void removeUser(User user) throws UserActionsException {
+    public void removeUser(User user) throws UserActionException {
         if(pointer < 0){
-            throw new UserActionsException("You can not remove users, because there are no users");
+            throw new UserActionException("You can not remove users, because there are no users");
         } else {
             try {
                 for(int i = 0; i < pointer; i++){
@@ -33,16 +34,16 @@ public class UserActions {
                     }
                 }
             } catch (Exception error) {
-                throw new UserActionsException("The user you tries to remove docent exists " + error.getMessage());
+                throw new UserActionException("The user you tries to remove docent exists " + error.getMessage());
             }
     
             System.out.println("User removed successfully");
         }
     }
     
-    public void updateUser(User user) throws UserActionsException{
+    public void updateUser(User user) throws UserActionException {
         if(pointer < 0){
-            throw new UserActionsException("There no users to update");
+            throw new UserActionException("There no users to update");
         }
         try {
             for(int i = 0; i < pointer; i++){
@@ -50,18 +51,18 @@ public class UserActions {
                     users[i] = user;
                     System.out.println("User updated successfully");
                 } else {
-                    throw new UserActionsException("The user you tries to update does not exists");
+                    throw new UserActionException("The user you tries to update does not exists");
                 }
             }
         } catch (Exception error) {
-            throw new UserActionsException("Error trying to update an user" + error.getMessage());
+            throw new UserActionException("Error trying to update an user" + error.getMessage());
         }
         
     }
     
-    public void searchUser(User user) throws UserActionsException{
+    public void searchUser(User user) throws UserActionException {
         if(pointer <= 0){
-            throw new UserActionsException("There are no users to search");
+            throw new UserActionException("There are no users to search");
         }
         try {
             for(int i = 0; i < pointer; i++){
@@ -70,7 +71,7 @@ public class UserActions {
                 }
             }
         } catch (Exception error) {
-            throw new UserActionsException("The user you trie to search does not exists " + error.getMessage());
+            throw new UserActionException("The user you trie to search does not exists " + error.getMessage());
         } finally {
             System.out.println("User found successfully");
         }

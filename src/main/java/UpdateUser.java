@@ -45,7 +45,7 @@ public class UpdateUser extends JFrame {
                     validateFormFields(oldUser);
     
                     User newUser = new User(newUserName, newResidencialNumber);
-                    UserActions createNewUser = new UserActions();
+                    UserAction createNewUser = new UserAction();
     
                     validateFormFields(newUser);
                     
