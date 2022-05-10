@@ -1,4 +1,4 @@
-name: Test Aplication
+name: User Registration - GitHub Actions
 on:
   push:
   pull_request:

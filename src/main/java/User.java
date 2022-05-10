@@ -20,22 +20,30 @@ public class User {
         }
     }
     
-    public User(String userCpf, String userName, String userRecidencialNumber) throws UserException {
-        if(userCpf.length() == 14) {
-            this.setUserCpf(userCpf);
-            this.setUserName(userName);
-            this.setUserRecidencialNumber(userRecidencialNumber);
+    public User(String newUserName, String newRecidencialNumber) throws UserException{
+        
+        if(newUserName == null || newRecidencialNumber == null) {
+            throw new UserException("Nome e Telefone Recidencial inválidos");
+            
+        } else if(newUserName.length() == 0 || newRecidencialNumber.length() == 0) {
+            throw new UserException("Nome ou senha não podem ser vazios");
         } else {
-            throw new UserException("CPF inválido");
+            this.setUserName(newUserName);
+            this.setUserRecidencialNumber(newRecidencialNumber);
+    
+            System.out.println("Usuário criado com sucesso");
         }
     }
     
-    public User(String newUserName, String newRecidencialNumber) throws UserException{
-        if(newUserName.length() > 0 && newRecidencialNumber.length() > 0) {
-            this.setUserName(newUserName);
-            this.setUserRecidencialNumber(newRecidencialNumber);
+    public User(String userCpf, String userName, String userRecidencialNumber) throws UserException {
+        if(userCpf == null) {
+            throw new UserException("CPF inválido");
+        } else if(userName.length() == 0 || userRecidencialNumber.length() == 0) {
+            throw new UserException("Nome ou senha não podem ser vazios");
         } else {
-            throw new UserException("Nome e Telefone Recidencial inválidos");
+            this.setUserCpf(userCpf);
+            this.setUserName(userName);
+            this.setUserRecidencialNumber(userRecidencialNumber);
         }
     }
     
@@ -43,7 +51,15 @@ public class User {
                  String userRecidencialNumber, String userComercialNumber,
                  String userPersonalNumber, String userCpf, String userRg
     ) throws UserException {
-        try {
+        if(
+                userName == null || userStreet == null || userStreetNumber == null
+                        || userRecidencialNumber == null || userComercialNumber == null
+                        || userPersonalNumber == null || userCpf == null || userRg == null
+        ) {
+            throw new UserException("Não podem haver campos vazios");
+        } else if(userName.length() == 0 || userCpf.length() == 0 || userRg.length() == 0) {
+            throw new UserException("Não podem haver campos vazios");
+        } else {
             this.setUserName(userName);
             this.setUserStreet(userStreet);
             this.setUserStreetNumber(userStreetNumber);
@@ -52,8 +68,6 @@ public class User {
             this.setUserPersonalNumber(userPersonalNumber);
             this.setUserCpf(userCpf);
             this.setUserRg(userRg);
-        } catch (Exception error) {
-            throw new UserException("Erro ao criar um usuário");
         }
     }
     
