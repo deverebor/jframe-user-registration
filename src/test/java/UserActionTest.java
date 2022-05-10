@@ -35,4 +35,26 @@ public class UserActionTest {
         assertEquals("Maximum number of users reached!", userActionExceptionCreateUser.getMessage());
         
     }
+    
+    @Test
+    public void shouldUserActionRemoveUser() throws UserException, UserActionException {
+        User user = new User(
+                "Adeobaldo", "street", "12",
+                "111111111", "1111111",
+                "11111111", "1111111111", "11111111"
+        );
+        UserAction userAction = new UserAction();
+        
+        userAction.createUser(user);
+        
+        userAction.removeUser(user);
+        
+        assertFalse(false, user.getUserName());
+        
+        UserActionException userActionExceptionRemoveUser = assertThrows(UserActionException.class, () -> {
+            userAction.removeUser(null);
+        });
+        
+        assertEquals("The user you tries to remove does not exists", userActionExceptionRemoveUser.getMessage());
+    }
 }

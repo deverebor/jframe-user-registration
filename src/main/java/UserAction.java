@@ -13,7 +13,7 @@ public class UserAction {
         if(pointer < maxNumberOfUsers){
             try {
                 users[pointer] = user;
-                this.pointer++;
+                pointer++;
                 
             } catch (Exception error) {
                 throw new UserActionException("Can not create user");
@@ -26,6 +26,8 @@ public class UserAction {
     public void removeUser(User user) throws UserActionException {
         if(pointer < 0){
             throw new UserActionException("You can not remove users, because there are no users");
+        } else if(user == null){
+            throw new UserActionException("The user you tries to remove does not exists");
         } else {
             try {
                 for(int i = 0; i < pointer; i++){
@@ -34,10 +36,8 @@ public class UserAction {
                     }
                 }
             } catch (Exception error) {
-                throw new UserActionException("The user you tries to remove docent exists " + error.getMessage());
+                throw new UserActionException("Can not remove user");
             }
-    
-            System.out.println("User removed successfully");
         }
     }
     
