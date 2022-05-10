@@ -37,7 +37,7 @@ public class RemoveUser extends JFrame {
                     userCpf = ftfOlderUserCPF.getText();
     
                     User oldUser = new User(userCpf);
-                    UserActions removeUser = new UserActions();
+                    UserAction removeUser = new UserAction();
     
                     validateFormFields(oldUser);
                     if(oldUser.getUserCpf().equals(userCpf)) {

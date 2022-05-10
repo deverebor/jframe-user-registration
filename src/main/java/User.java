@@ -16,26 +16,32 @@ public class User {
         if(userCpf.length() == 14) {
             this.setUserCpf(userCpf);
         } else {
-           throw new UserException("CPF inválido");
-        }
-    }
-    
-    public User(String userCpf, String userName, String userRecidencialNumber) throws UserException {
-        if(userCpf.length() == 14) {
-            this.setUserCpf(userCpf);
-            this.setUserName(userName);
-            this.setUserRecidencialNumber(userRecidencialNumber);
-        } else {
-            throw new UserException("CPF inválido");
+           throw new UserException("Invalid CPF");
         }
     }
     
     public User(String newUserName, String newRecidencialNumber) throws UserException{
-        if(newUserName.length() > 0 && newRecidencialNumber.length() > 0) {
+        
+        if(newUserName == null || newRecidencialNumber == null) {
+            throw new UserException("Name and recidencial number cannot be null");
+            
+        } else if(newUserName.length() == 0 || newRecidencialNumber.length() == 0) {
+            throw new UserException("Name or recidencial number cannot be empty");
+        } else {
             this.setUserName(newUserName);
             this.setUserRecidencialNumber(newRecidencialNumber);
+        }
+    }
+    
+    public User(String userCpf, String userName, String userRecidencialNumber) throws UserException {
+        if(userCpf == null) {
+            throw new UserException("Invalid CPF");
+        } else if(userName.length() == 0 || userRecidencialNumber.length() == 0) {
+            throw new UserException("Name or recidencial number cannot be empty");
         } else {
-            throw new UserException("Nome e Telefone Recidencial inválidos");
+            this.setUserCpf(userCpf);
+            this.setUserName(userName);
+            this.setUserRecidencialNumber(userRecidencialNumber);
         }
     }
     
@@ -43,7 +49,15 @@ public class User {
                  String userRecidencialNumber, String userComercialNumber,
                  String userPersonalNumber, String userCpf, String userRg
     ) throws UserException {
-        try {
+        if(
+                userName == null || userStreet == null || userStreetNumber == null
+                        || userRecidencialNumber == null || userComercialNumber == null
+                        || userPersonalNumber == null || userCpf == null || userRg == null
+        ) {
+            throw new UserException("Can not create with empty fileds");
+        } else if(userName.length() == 0 || userCpf.length() == 0 || userRg.length() == 0) {
+            throw new UserException("Can not create with empty fileds");
+        } else {
             this.setUserName(userName);
             this.setUserStreet(userStreet);
             this.setUserStreetNumber(userStreetNumber);
@@ -52,8 +66,6 @@ public class User {
             this.setUserPersonalNumber(userPersonalNumber);
             this.setUserCpf(userCpf);
             this.setUserRg(userRg);
-        } catch (Exception error) {
-            throw new UserException("Erro ao criar um usuário");
         }
     }
     

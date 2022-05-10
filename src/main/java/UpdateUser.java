@@ -1,8 +1,11 @@
 import javax.swing.*;
+import javax.swing.text.DefaultFormatterFactory;
+import javax.swing.text.MaskFormatter;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
+import java.text.ParseException;
 
 public class UpdateUser extends JFrame {
     private JPanel updateUserPanel;
@@ -25,6 +28,8 @@ public class UpdateUser extends JFrame {
         updataUserFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         updataUserFrame.pack();
         updataUserFrame.setVisible(true);
+    
+        maskFormFields();
         returnToMenu();
         changeExistentUser();
     }
@@ -45,11 +50,11 @@ public class UpdateUser extends JFrame {
                     validateFormFields(oldUser);
     
                     User newUser = new User(newUserName, newResidencialNumber);
-                    UserActions createNewUser = new UserActions();
+                    UserAction updateNewUser = new UserAction();
     
                     validateFormFields(newUser);
                     
-                    createNewUser.updateUser(newUser);
+                    updateNewUser.updateUser(newUserName, newResidencialNumber);
     
                     JOptionPane.showMessageDialog(updateUserPanel, "Informações do usuário alteradas com sucesso!");
                     
@@ -87,6 +92,16 @@ public class UpdateUser extends JFrame {
                 closeWindow();
             }
         });
+    }
+    
+    public void maskFormFields(){
+        try {
+            ftfUserResidencialNumber.setFormatterFactory(new DefaultFormatterFactory(new MaskFormatter("####-####")));
+            ftfNewUserResidencialNumber.setFormatterFactory(new DefaultFormatterFactory(new MaskFormatter("####-####")));
+        } catch (ParseException error) {
+            System.out.println("Erro ao mascarar campos!" + error.getMessage());
+        }
+       
     }
     
     public void clearFormFields() {

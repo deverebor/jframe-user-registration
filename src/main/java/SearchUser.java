@@ -20,7 +20,6 @@ public class SearchUser extends JFrame {
     private JFormattedTextField ftfSearchUserRecidencialNumber;
     private String userCpf, userName,userRecidencialNumber;
     
-    private User searchUser;
     
     public SearchUser() {
         JFrame searchUserFrame = new JFrame("Tela de Pesquisa de um Usuário");
@@ -44,16 +43,15 @@ public class SearchUser extends JFrame {
                     userRecidencialNumber = ftfSearchUserRecidencialNumber.getText();
         
                     User oldUser = new User(userCpf, userName, userRecidencialNumber);
-                    UserActions searchNewUser = new UserActions();
+                    UserAction searchNewUser = new UserAction();
         
                     validateFormFields(oldUser);
                     if(oldUser.getUserCpf().equals(userCpf)) {
-                        searchNewUser.searchUser(oldUser);
-                        searchUser = oldUser;
+                        String[] searchedUser = searchNewUser.searchUser(userCpf);
     
                         jtSearchedResult.setModel(new AbstractTableModel() {
                             final String[] columnNames = {"Nome", "CPF", "Telefone Pessoal"};
-                            final Object[][] data = {{searchUser.getUserName(), searchUser.getUserCpf(), searchUser.getUserPersonalNumber()}};
+                            final Object[][] data = {{searchedUser[0]},{searchedUser[1]},{searchedUser[2]}};
         
                             @Override
                             public int getColumnCount() {
