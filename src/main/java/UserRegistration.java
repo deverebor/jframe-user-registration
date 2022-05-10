@@ -99,7 +99,7 @@ public class UserRegistration extends JFrame {
             createNewUser.createUser(newUser);
     
             JOptionPane.showMessageDialog(mainPanel,
-                    "O usuário: " + newUser.getUserName() +" foi criado(a) com " + "sucesso!"
+                    "O usuário: (" + newUser.getUserName() +") foi criado(a) com " + "sucesso!"
             );
         }
     }
@@ -132,17 +132,6 @@ public class UserRegistration extends JFrame {
                 closeWindow();
             }
         });
-    }
-    
-    public void clearFormFields() {
-        jtUserName.setText(null);
-        jtfStreet.setText(null);
-        jtfStreetNumber.setText(null);
-        jftfRecidencialNumber.setText(null);
-        ftfComercialNumber.setText(null);
-        ftfPersonalNumber.setText(null);
-        ftfCPF.setText(null);
-        ftfRG.setText(null);
     }
     
     public void createComboBox(){
@@ -185,5 +174,16 @@ public class UserRegistration extends JFrame {
                 System.exit(0);
             }
         });
+    }
+    
+    public void clearFormFields() {
+        jtUserName.setText(null);
+        jtfStreet.setText(null);
+        jtfStreetNumber.setText(null);
+        jftfRecidencialNumber.setText(null);
+        ftfComercialNumber.setText(null);
+        ftfPersonalNumber.setText(null);
+        ftfCPF.setText(null);
+        ftfRG.setText(null);
     }
 }

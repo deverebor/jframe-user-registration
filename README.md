@@ -11,7 +11,7 @@
 ## 📢 Sobre a Questão
 
 Devemos criar um programa utilizando a biblioteca JFrame que será responsável por cadastrar um utilizador 
-num determinado sistema. Onde um funcionário terá total acesso ao sistema, para adicionar, remover, alterar ou buscar um usuário.
+num determinado sistema. Onde um funcionário terá total acesso ao sistema para adicionar, remover, alterar ou buscar um usuário.
 
 A aplicação deverá ser construída em Java, utilizando a biblioteca JFrame e as ações devem ser em runtime.
 
@@ -20,15 +20,17 @@ A aplicação deverá ser construída em Java, utilizando a biblioteca JFrame e 
 1. Criar mascarás para o CPF, RG e Números telefonicos.;
 2. Campos definidos no ‘slide’ devem ser obrigatórios;
 3. O funciário deve conseguir cadastrar, alterar, excluir e pesquisar um usuário;
-4. Código precisa ser autoral e se desejável validação;
+4. Código precisa ser autoral e se possível é desejável validação;
 
 ## 🎯 Ferramentas utilizadas no desenvolvimento da aplicação:
 
 - `Java 18`
 - `openjdk-18-jre`
 - `openjdk-18-jdk`
+- `MAVEN`
 - `IntelliJ IDEA`
 - `GIT`
+- `GH CLI`
 
 ## 📚 Oque está sendo entregue
 
@@ -50,10 +52,16 @@ funcionam corretamente. Para validar o código, foi utilizado o [JUnit](https://
 Na aplicação, pode-se encontrar alguns _TODOS_ que vão ser implementados como forma externa a avaliação, com 
 o intuito de melhorar a qualidade do código.
 
-- `Adaptação da classe UTILS`: Será removido algumas lógicas repetitivas para um Utils, onde todo o contexto 
-  poderá utilizar.
-- `Reescrita de algumas regras de négocio`: Será reescrita algumas regras de négocio para melhorar a desempenho da aplicação.
-- `Adição de um banco de dados`: Será adicionado um banco de dados para armazenar os usuários e não mais em runtime.
+- [ ] `Adaptação da classe UTILS`: Será removido algumas lógicas repetitivas, que de alguma forma poderam ser 
+  reaproveiadas em mais de um contexto para o Utils.
+- [x] `Reescrita de algumas regras de négocio`: Será reescrita algumas regras de négocio para melhorar a desempenho da 
+  aplicação.
+- [x] `Criar testes unitarios para as classes`: Será criado testes unitários para as classes, assim assegurando a 
+  completa estabilidade do software.
+- [x] `Criar classes de exception para as determinadas classes: User & UserActions`: Será criado uma classe de 
+  exception para, conseguirmos tratar as exceções que acontecem na aplicação.
+- [x] `Pequenos ajustes na interface`: Será realizado alguns ajustes na interface, para melhorar a experiência do usuário.
+- [ ] `Adição de um banco de dados`: Será adicionado um banco de dados para armazenar os usuários e não mais em runtime.
 
 ## 🚀 Releases
 

@@ -50,11 +50,11 @@ public class UpdateUser extends JFrame {
                     validateFormFields(oldUser);
     
                     User newUser = new User(newUserName, newResidencialNumber);
-                    UserAction createNewUser = new UserAction();
+                    UserAction updateNewUser = new UserAction();
     
                     validateFormFields(newUser);
                     
-                    createNewUser.updateUser(newUserName, newResidencialNumber);
+                    updateNewUser.updateUser(newUserName, newResidencialNumber);
     
                     JOptionPane.showMessageDialog(updateUserPanel, "Informações do usuário alteradas com sucesso!");
                     
