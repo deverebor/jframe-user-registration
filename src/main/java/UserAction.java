@@ -66,20 +66,21 @@ public class UserAction {
         
     }
     
-    public void searchUser(User user) throws UserActionException {
-        if(pointer <= 0){
+    public String[] searchUser(String userCpf) throws UserActionException {
+        if (pointer <= 0) {
             throw new UserActionException("There are no users to search");
         }
-        try {
-            for(int i = 0; i < pointer; i++){
-                if(user.getUserCpf().equals(users[i].getUserCpf())){
-                    user = users[i];
-                }
+        String[] searchedUsers = new String[0];
+        for (int i = 0; i < pointer; i++) {
+            if (userCpf.equals(users[i].getUserCpf())) {
+                searchedUsers = new String[]{
+                        users[i].getUserName(),
+                        users[i].getUserCpf(),
+                        users[i].getUserPersonalNumber()
+                };
             }
-        } catch (Exception error) {
-            throw new UserActionException("The user you trie to search does not exists " + error.getMessage());
-        } finally {
-            System.out.println("User found successfully");
         }
+    
+        return searchedUsers;
     }
 }
